@@ -33,7 +33,6 @@ const MyProfileView = (props) => {
       <View style={{ alignItems: "center", flex: 0.3, paddingTop: 20 }}>
         <Image style={styles.img} source={R.images.avtNam} />
         <Text style={styles.txtTitle}>{data.data.name}</Text>
-        <Text style={styles.txtGrayPhone}>Change photo</Text>
       </View>
       <View style={{ flex: 0.7 }}>
         <View style={styles.row}>

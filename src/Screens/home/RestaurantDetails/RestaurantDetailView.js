@@ -24,7 +24,7 @@ import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import StarReview from "../../../components/StarReview/StarReview";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { toPriceVnd } from "../../../Config/Functions";
+import { toPriceVnd, getWidth } from "../../../Config/Functions";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import {
   addCart,
@@ -35,6 +35,30 @@ import { connect } from "react-redux";
 import DetailComment from "./MaterialTopTab/MaterialTopTabView";
 import { showAlert, TYPE } from "../../../components/DropdownAlert";
 
+const reviewContent = [
+  {
+    id: 1,
+    name: "Garnet Bit",
+    rate: 5,
+    avt: R.images.avtNu,
+    time: "Yesterday 9:28",
+    content:
+      "I'm happy very good very good, understand your problem. There is no good support for nested ScrollViews and FlatLists in RN and your setup must already be spamming you warnings.",
+    img1: "https://cdn.lep.vn//2022/06/images/products/1656399176652-MAXIJENN-3-800x800.jpeg",
+    img2: "https://cdn.lep.vn//2022/05/images/products/1652781254962-A82A2575-800x800.jpeg",
+  },
+  {
+    id: 2,
+    name: "Garnet Bit",
+    rate: 5,
+    avt: R.images.avtNam,
+    time: "Yesterday 9:28",
+    content:
+      "I'm happy very good very good, understand your problem. There is no good support for nested ScrollViews and FlatLists in RN and your setup must already be spamming you warnings.",
+    img1: "https://cdn.lep.vn//2022/06/images/products/1656399176652-MAXIJENN-3-800x800.jpeg",
+    img2: "https://cdn.lep.vn//2022/03/images/products/1647527709988-_DSC9545-300x300.jpeg",
+  },
+];
 const Tab = createMaterialTopTabNavigator();
 const RestaurantDetailsView = (props) => {
   const {
@@ -47,7 +71,8 @@ const RestaurantDetailsView = (props) => {
   const navigate = useNavigation();
   const [size, setSize] = useState("S");
   const [isOrder, setOrder] = useState(false);
-  console.log("favotiteList");
+  const [textShown, setTextShown] = useState(false);
+  const [lengthMore, setLengthMore] = useState(false);
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -93,10 +118,12 @@ const RestaurantDetailsView = (props) => {
             </TouchableOpacity>
           </View>
         </View>
+
         <ScrollView
-          contentContainerStyle={{
+          style={{
             flex: 1,
           }}
+          showsVerticalScrollIndicator={false}
         >
           <Image
             resizeMode="stretch"
@@ -165,25 +192,6 @@ const RestaurantDetailsView = (props) => {
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => setSize("L")}
-                  style={[
-                    styles.box,
-                    size == "L"
-                      ? { backgroundColor: R.colors.colorMain }
-                      : null,
-                  ]}
-                >
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "600",
-                      color: size == "L" ? "white" : "black",
-                    }}
-                  >
-                    L
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
                   onPress={() => setSize("M")}
                   style={[
                     styles.box,
@@ -200,6 +208,25 @@ const RestaurantDetailsView = (props) => {
                     }}
                   >
                     M
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => setSize("L")}
+                  style={[
+                    styles.box,
+                    size == "L"
+                      ? { backgroundColor: R.colors.colorMain }
+                      : null,
+                  ]}
+                >
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "600",
+                      color: size == "L" ? "white" : "black",
+                    }}
+                  >
+                    L
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -248,7 +275,80 @@ const RestaurantDetailsView = (props) => {
             >
               {`Thiết kế váy của Lep' dành cho những cô gái muốn đẹp muốn tươi,muốn yêu đời rực rỡ. Thanh lịch những vẫn quyến rũ! \n- Chất liệu: gântrơn \n- Chiều dài áo: 115cm \n- Dáng áo: trench coat \n- Size váy:\nSize S: Vòng 1 dưới 83, Vòng 2 dưới 64. \nSize M: Vòng 1 82-86, Vòng 264-68. \nSize L: Vòng 1 86-90, Vòng 2 68-74.`}
             </Text>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "600",
+                marginTop: 20,
+              }}
+            >
+              Nhận xét
+            </Text>
+
+            {reviewContent.map((item) => (
+              <View
+                style={{
+                  backgroundColor: R.colors.white,
+                  flexDirection: "column",
+                  paddingVertical: 15,
+                  paddingHorizontal: 15,
+                  width: getWidth() - 20,
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <View style={{ flex: 1, flexDirection: "row" }}>
+                    <Image style={styles.avt} source={item.avt} />
+                    <View
+                      style={{
+                        flex: 1,
+                        justifyContent: "space-around",
+                        paddingHorizontal: 10,
+                      }}
+                    >
+                      <Text>{item.name}</Text>
+                      <StarReview rate={item.rate} hide={true} />
+                    </View>
+                  </View>
+                  <Text style={styles.txtGray}>{item.time}</Text>
+                </View>
+                <View style={{ flex: 1, paddingVertical: 10 }}>
+                  <Text
+                    style={styles.txt}
+                    numberOfLines={textShown ? undefined : 3}
+                  >
+                    {item.content}
+                  </Text>
+
+                  {lengthMore ? (
+                    <Text
+                      onPress={toggleNumberOfLines}
+                      style={[styles.txtweight, { color: R.colors.colorMain }]}
+                    >
+                      {textShown ? "Read less" : "Read more"}
+                    </Text>
+                  ) : null}
+                </View>
+                <View style={{ flex: 1, flexDirection: "row" }}>
+                  <Image
+                    style={styles.imgFoodreview}
+                    source={{ uri: item.img1 }}
+                  />
+                  <Image
+                    style={styles.imgFoodreview}
+                    source={{ uri: item.img2 }}
+                  />
+                </View>
+              </View>
+            ))}
+            <View style={{ height: 30 }} />
           </View>
+
           {props.product.cart?.length > 0 && (
             <TouchableOpacity
               style={styles.popup}
@@ -311,6 +411,65 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
 
+  popup: {
+    width: 70,
+    height: 70,
+    borderRadius: 70,
+    backgroundColor: R.colors.colorMain,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    right: 15,
+    bottom: 100,
+    alignSelf: "center",
+  },
+  txtCountPopup: {
+    textAlign: "center",
+    color: R.colors.colorMain,
+  },
+  imgNearmeFood: {
+    width: 90,
+    height: 90,
+    borderRadius: 20,
+  },
+  txt: {
+    fontSize: 15,
+    color: R.colors.black,
+    lineHeight: 22,
+  },
+  txtInfo: {
+    fontSize: 16,
+    color: R.colors.black,
+    fontWeight: "500",
+  },
+  avt: {
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+  },
+  txtweight: {
+    fontSize: 15,
+    fontWeight: "600",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  txtGray: {
+    fontSize: 13,
+    color: R.colors.color777,
+  },
+  txtPrice: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: R.colors.colorMain,
+  },
+  imgFoodreview: {
+    width: 60,
+    height: 60,
+    marginHorizontal: 5,
+    borderRadius: 10,
+  },
   popup: {
     width: 70,
     height: 70,

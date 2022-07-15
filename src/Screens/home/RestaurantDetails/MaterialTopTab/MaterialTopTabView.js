@@ -24,6 +24,7 @@ import {
   decreaseItem,
   increaseItem,
 } from "../../../../actions/MyCartAction";
+import { getWidth } from "../../../../Config/Functions";
 
 const reviewContent = [
   {
@@ -56,15 +57,20 @@ const MaterialTopTabView = (props) => {
   const [lengthMore, setLengthMore] = useState(false);
 
   return (
-    <View>
+    <View
+      style={{
+        width: getWidth(),
+      }}
+    >
       {reviewContent.map((item) => (
         <View
           style={{
-            flex: 1,
             backgroundColor: R.colors.white,
             flexDirection: "column",
             paddingVertical: 15,
             paddingHorizontal: 15,
+            width: getWidth(),
+            height: 200,
           }}
         >
           <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>

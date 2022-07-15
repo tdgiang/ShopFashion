@@ -24,7 +24,7 @@ const ListProductView = (props) => {
         flex: 1,
       }}
     >
-      <Header isBack={true} title={name} />
+      <Header isBack={true} title={`Sản phẩm ${name}`} />
       <FlatList
         numColumns={2}
         contentContainerStyle={{
