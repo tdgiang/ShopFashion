@@ -25,6 +25,8 @@ import PayPal from "../Screens/PaymentSetting/MethodPayment/PayPal";
 import CreditCard from "../Screens/PaymentSetting/MethodPayment/CreditCard";
 import CreditCardDetails from "../Screens/PaymentSetting/MethodPayment/CreditCardDetails";
 
+import ListProduct from "../Screens/ListProduct/index";
+
 const Stack = createStackNavigator();
 
 function MyStack(props) {
@@ -38,6 +40,8 @@ function MyStack(props) {
     >
       <Stack.Screen name={ScreenName.LOGINSCREEN} component={Login} />
       <Stack.Screen name={ScreenName.TABNAVIGATOR} component={TabNavigator} />
+      <Stack.Screen name={ScreenName.LIST_PRODUCT} component={ListProduct} />
+
       <Stack.Screen name={ScreenName.INTROFOODSCREEN} component={IntroFood} />
       <Stack.Screen name={ScreenName.SIGNINSCREEN} component={SignIn} />
       <Stack.Screen name={ScreenName.SIGNUPSCREEN} component={SignUp} />

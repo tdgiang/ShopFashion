@@ -55,7 +55,13 @@ const Login = (props) => {
   const navigate = useNavigation();
 
   const onSubmit = (data) => {
-    navigate.navigate(TABNAVIGATOR);
+    props.showLoading();
+
+    // setTimeout(() => {
+    //   props.hideLoading();
+    //   navigate.navigate(TABNAVIGATOR);
+    // }, 3000);
+
     console.log(data);
   };
 
@@ -80,7 +86,6 @@ const Login = (props) => {
           )}
           name="username"
           defaultValue=""
-          
         />
         <Controller
           control={control}
@@ -105,7 +110,7 @@ const Login = (props) => {
         />
         <View style={styles.row}>
           <View />
-          
+
           <TouchableOpacity onPress={() => navigate.navigate(FORGOTPASSWORD)}>
             <AppText style={styles.txtTitle} i18nKey={"ForgotPassword"} />
           </TouchableOpacity>

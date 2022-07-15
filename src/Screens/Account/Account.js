@@ -1,18 +1,14 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import AccountView from './AccountView';
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+import AccountView from "./AccountView";
 
 const Account = (props) => {
   const dataProfile = {
-    myProfile:[
-      {
-        name:'Jack lane',
-        phone:'+1 2343434 821',
-        email:'jack@daswae.mail',
-        address:'9sh West stret New york'
-      }
-    ]
-  }
+    name: "Thưởng Trần",
+    phone: "08827127221",
+    email: "jack@gmail.mail",
+    address: "111 Trâu Quỳ,Gia Lâm,Hà Nội",
+  };
   return <AccountView dataProfile={dataProfile} />;
 };
 

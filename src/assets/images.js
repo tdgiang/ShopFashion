@@ -8,7 +8,7 @@ const images = {
   iconAward: require("./images/award.png"),
   iconCreditCard: require("./images/credit-card.png"),
   iconTruck: require("./images/delivery_truck_shipping_package_fast_icon_196609.png"),
-  iconHamberger: require("./images/iconHamberger.png"),
+  iconHamberger: require("./images/iconHamberger1.png"),
   imgSalad: require("./images/bgBottom2.png"),
   imgLocationMap: require("./images/locationMap.png"),
   imgDrinks: require("./images/sparkling-water.png"),
@@ -39,6 +39,10 @@ const images = {
   iconPaid: require("./images/paid.png"),
   iconQrcode: require("./images/qr-code.png"),
   creditCardIMG: require("./images/creditcard-Img.png"),
+  dress: require("./images/dress.png"),
+  shirt: require("./images/shirt.png"),
+  skirt: require("./images/skirt.png"),
+  trousers: require("./images/trousers.png"),
 };
 
 export default images;

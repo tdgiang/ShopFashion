@@ -18,29 +18,44 @@ import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Header = (props) => {
-  const { title, isBack,containerStyle,contaierSafeAreView,colorIcon,styleTitle,isDot } = props;
+  const {
+    title,
+    isBack,
+    containerStyle,
+    contaierSafeAreView,
+    colorIcon,
+    styleTitle,
+    isDot,
+  } = props;
   const navigate = useNavigation();
   return (
     <>
       <SafeAreaView
-        style={[{
-          flex: 0,
-          backgroundColor: R.colors.white,
-        },{...contaierSafeAreView}]}
+        style={[
+          {
+            flex: 0,
+            backgroundColor: R.colors.white,
+          },
+          { ...contaierSafeAreView },
+        ]}
       />
 
-      <View style={[styles.headerContainer,{...containerStyle}]}>
+      <View style={[styles.headerContainer, { ...containerStyle }]}>
         {isBack ? (
           <TouchableOpacity
             style={{ width: 35, height: 30 }}
             onPress={() => navigate.goBack()}
           >
-            <Ionicons name="chevron-back-outline" size={25} color={colorIcon ? colorIcon : "black"} />
+            <Ionicons
+              name="chevron-back-outline"
+              size={25}
+              color={colorIcon ? colorIcon : "black"}
+            />
           </TouchableOpacity>
         ) : (
           <View style={{ width: 35, height: 30 }} />
         )}
-        <Text numberOfLines={1} style={[styles.txtTitle,{...styleTitle}]}>
+        <Text numberOfLines={1} style={[styles.txtTitle, { ...styleTitle }]}>
           {title}
         </Text>
         {props.addPress ? (
@@ -74,8 +89,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 2,
     elevation: 1,
-    borderBottomWidth:0.5,
-    borderBottomColor:R.colors.gray3
+    borderBottomWidth: 1,
+    borderBottomColor: R.colors.borderGray,
   },
   txtTitle: {
     flex: 1,

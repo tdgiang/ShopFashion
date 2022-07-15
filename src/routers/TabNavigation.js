@@ -5,15 +5,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { connect } from "react-redux";
 import R from "../assets/R";
 import Octicons from "react-native-vector-icons/Octicons";
-import Entypo from "react-native-vector-icons/Entypo"
-import Ionicons from "react-native-vector-icons/Ionicons"
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
-
+import Entypo from "react-native-vector-icons/Entypo";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import Home from "../Screens/home/Home";
 import Notification from "../Screens/notification/Notification";
 import Account from "../Screens/Account/Account";
-import Profile from "../Screens/Profile/Profile"
+import Profile from "../Screens/Profile/Profile";
 import MyList from "../Screens/MyList/MyList";
 import Order from "../Screens/Order/Oder";
 
@@ -24,16 +24,16 @@ const TabNavigator = (props) => {
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         initialRouteName="Screen5"
-        tabBarOptions={{ 
+        tabBarOptions={{
           activeTintColor: R.colors.colorMain,
-          labelStyle: { fontSize:15 },
+          labelStyle: { fontSize: 15 },
         }}
       >
         <Tab.Screen
           name="HomeScreen"
           component={Home}
           options={{
-            tabBarLabel: "Home",
+            tabBarLabel: "Trang chủ",
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="ios-home" size={size} color={color} />
             ),
@@ -43,9 +43,13 @@ const TabNavigator = (props) => {
           name="OrderScreen"
           component={Order}
           options={{
-            tabBarLabel: "Order",
+            tabBarLabel: "Đơn hàng",
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="text-box-outline" size={size} color={color} />
+              <MaterialCommunityIcons
+                name="text-box-outline"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
@@ -54,7 +58,7 @@ const TabNavigator = (props) => {
           name="MyListScreen"
           component={MyList}
           options={{
-            tabBarLabel: "My List",
+            tabBarLabel: "Yêu thích",
             tabBarIcon: ({ color, size }) => (
               <Octicons name="bookmark" size={size} color={color} />
             ),
@@ -64,7 +68,7 @@ const TabNavigator = (props) => {
           name="AccountScreen"
           component={Account}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "Tài khoản",
             tabBarIcon: ({ color, size }) => (
               <Octicons name="person" size={size} color={color} />
             ),

@@ -20,20 +20,4 @@ export const PAY_PAL = "PAY_PAL";
 export const CREDIT_CARD = "CREDIT_CARD";
 export const CREDIT_CARD_DETAILS = "CREDIT_CARD_DETAILS";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const LIST_PRODUCT = "LIST_PRODUCT";

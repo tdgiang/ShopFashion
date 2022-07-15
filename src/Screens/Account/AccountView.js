@@ -1,80 +1,93 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View,Image,TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import R from "../../assets/R";
 import { getFontXD } from "../../Config/Functions";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../components/Header/Header";
 import PickerDate from "../../components/Picker/PickerDate";
 import { showAlert, TYPE } from "../../components/DropdownAlert";
-import AntDesign from "react-native-vector-icons/AntDesign"
-import { CHANGE_PASS_SCREEN, MY_PROFILE_SCREEN, PAYMENT_SETTING_SCREEN } from "../../routers/ScreenNames";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import {
+  CHANGE_PASS_SCREEN,
+  MY_PROFILE_SCREEN,
+  PAYMENT_SETTING_SCREEN,
+} from "../../routers/ScreenNames";
 import { userInfoApi } from "../../apis/Functions/users";
-
 
 const AccountView = (props) => {
   const navigation = useNavigation();
-  const {dataProfile} = props
-  const [dataUser,setDataUser] = useState('')
-  useEffect(() => {
-    getDataUser();
-  }, []);
-  const getDataUser = async () => {
-    let response = await userInfoApi({
-    });
-    response.data.map((item,index) => setDataUser(item))
-    console.log(dataUser)
-  };
-  
+  const { dataProfile } = props;
+
   return (
-    <View style={{ flex: 1,backgroundColor:R.colors.white }}>
-        <View style={{alignItems:'center',flex:0.3,paddingTop:100,paddingBottom:30}}>
-          <Image style={styles.img} source={R.images.avtNam}/>
-          <Text style={styles.txtTitle}>{dataUser.name}</Text>
-          <Text style={styles.txtGrayPhone}>{dataUser.phonenumber}</Text>
-        </View>
-      <View style={{flex:0.7}}>
-        <TouchableOpacity 
+    <View style={{ flex: 1, backgroundColor: R.colors.white }}>
+      <View
+        style={{
+          alignItems: "center",
+          flex: 0.3,
+          paddingTop: 100,
+          paddingBottom: 30,
+        }}
+      >
+        <Image style={styles.img} source={R.images.avtNam} />
+        <Text style={styles.txtTitle}>{dataProfile.name}</Text>
+        <Text style={styles.txtGrayPhone}>{dataProfile.phone}</Text>
+      </View>
+      <View style={{ flex: 0.7 }}>
+        <TouchableOpacity
           style={styles.btn}
-          onPress={() => navigation.navigate(MY_PROFILE_SCREEN,dataUser)}
+          onPress={() => navigation.navigate(MY_PROFILE_SCREEN, dataProfile)}
         >
-          <Text style={styles.txtGray}>My profile</Text>
+          <Text style={styles.txtGray}>Thông tin tài khoản</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.btn}
           onPress={() => navigation.navigate(CHANGE_PASS_SCREEN)}
         >
-          <Text style={styles.txtGray}>Change Password</Text>
+          <Text style={styles.txtGray}>Đổi mật khẩu</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.btn}
-          onPress={() => navigation.navigate(PAYMENT_SETTING_SCREEN,dataUser)}
+          onPress={() => navigation.navigate(PAYMENT_SETTING_SCREEN, dataUser)}
         >
-          <Text style={styles.txtGray}>Payment Settings</Text>
+          <Text style={styles.txtGray}>Phương thức thanh toán</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.btn}>
-          <Text style={styles.txtGray}>My Voucher</Text>
+          <Text style={styles.txtGray}>Thông báo</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.txtGray}>Notification</Text>
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL("https://lep.vn/");
+          }}
+          style={styles.btn}
+        >
+          <Text style={styles.txtGray}>Về chúng tôi</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.txtGray}>About Us</Text>
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL("https://lep.vn/");
+          }}
+          style={styles.btn}
+        >
+          <Text style={styles.txtGray}>Liên hệ</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.txtGray}>Contact Us</Text>
-          <AntDesign name="right" size={20} color={R.colors.gray5b71} />
-        </TouchableOpacity>
-        <TouchableOpacity style={{alignItems:'center',paddingVertical:20}}>
-          <Text style={[styles.txtTitle,{color:"red"}]}>Sign Out</Text>
+        <TouchableOpacity style={{ alignItems: "center", paddingVertical: 20 }}>
+          <Text style={[styles.txtTitle, { color: "red" }]}>Đăng xuất</Text>
         </TouchableOpacity>
       </View>
-      
     </View>
   );
 };
@@ -83,35 +96,35 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 10,
   },
-  txtTitle:{
-    fontSize:16,
-    fontWeight:'600',
-    color:R.colors.black,
-    paddingTop:10
-  },  
-  txtGrayPhone:{
-    fontSize:15,
-    fontWeight:'300',
-    color:R.colors.color777,
-    paddingVertical:2
+  txtTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: R.colors.black,
+    paddingTop: 10,
   },
-  txtGray:{
-    fontSize:16,
-    fontWeight:'500',
-    color:R.colors.gray5b71
+  txtGrayPhone: {
+    fontSize: 15,
+    fontWeight: "300",
+    color: R.colors.color777,
+    paddingVertical: 2,
   },
-  img:{
-    width:150,
-    height:150,
-    borderRadius:150
+  txtGray: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: R.colors.gray5b71,
   },
-  btn:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    paddingHorizontal:15,
-    paddingVertical:15
-  }
+  img: {
+    width: 150,
+    height: 150,
+    borderRadius: 150,
+  },
+  btn: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+  },
 });
 
 export default AccountView;

@@ -26,27 +26,98 @@ import Header from "../../components/Header/Header";
 import { connect } from "react-redux";
 import { increase, decrease } from "../../actions/CountAction";
 
+import Banner from "./Banner";
+
+const ListProduct = [
+  {
+    id: 10000021,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/05/images/products/1652781254962-A82A2575-800x800.jpeg",
+    name: "Váy Cổ V Ly",
+    price: 450000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 3.6,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+  {
+    id: 10000022,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/06/images/products/1656399176652-MAXIJENN-3-800x800.jpeg",
+    price: 500000,
+    name: "Váy Maxi Jenn - Đỏ Cam",
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 3.9,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+  {
+    id: 10000023,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/03/images/products/1647538267012-IMG_2578-800x800.jpeg",
+    name: "Váy nơ cổ tùng xòe",
+    price: 600000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 4.6,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+  {
+    id: 10000024,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/03/images/products/1647527709988-_DSC9545-300x300.jpeg",
+    name: "Áo Khoác Lệch Tà",
+    price: 1450000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 4.1,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+  {
+    id: 10000025,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/07/images/products/1656856238386-IMG_5230-800x800.jpeg",
+    name: "Váy cổ tròn nhún eo",
+    price: 790000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 4.0,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+  {
+    id: 10000026,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/07/images/products/1657089641385-1VA02018HO-03-800x800.jpeg",
+    name: "Váy wrap tùng xoè ",
+    price: 595000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 4.6,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+];
+
 const HomeView = (props) => {
   const historySearch = [
     {
       id: 1,
-      name: "Hamsazda",
+      name: "Váy xoè",
     },
     {
       id: 2,
-      name: "fdasfas",
-    },
-    {
-      id: 3,
-      name: "asdsadsa",
-    },
-    {
-      id: 4,
-      name: "weqweqw",
-    },
-    {
-      id: 5,
-      name: "asdwqeqwewasda",
+      name: "Chân váy",
     },
   ];
 
@@ -76,15 +147,12 @@ const HomeView = (props) => {
         return i.type.match(regax);
       });
     }
-    console.log(matches);
+
     setfilterData(matches);
     setSearch(text);
   };
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{ flex: 1, backgroundColor: R.colors.white }}
-    >
+    <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <View style={{ flex: 1, backgroundColor: R.colors.white }}>
         {/* <ModalEnableLocation /> */}
         <View>
@@ -122,8 +190,8 @@ const HomeView = (props) => {
                     />
                   </TouchableOpacity>
                   <Searchbar
-                    placeholder="Search"
-                    onChangeText={(text) => serachFilter(text)}
+                    placeholder="Nhập từ khoá"
+                    // onChangeText={(text) => serachFilter(text)}
                     value={search}
                     style={{
                       width: 315,
@@ -171,10 +239,10 @@ const HomeView = (props) => {
                         paddingVertical: 15,
                       }}
                     >
-                      <Text style={styles.txtGray}>🕒 Search history</Text>
+                      <Text style={styles.txtGray}>🕒 Lịch sử tìm kiếm</Text>
                       <TouchableOpacity>
                         <Text style={[styles.txtGray, { fontSize: 15 }]}>
-                          Clear all
+                          Xoá hết
                         </Text>
                       </TouchableOpacity>
                     </View>
@@ -215,124 +283,95 @@ const HomeView = (props) => {
                         );
                       }}
                     />
-                    <Text style={[styles.txtTitle, { paddingHorizontal: 0 }]}>
-                      Popular
-                    </Text>
-                    <FoodBreakfast data={FoodTypeData[1].menuBreakfast} />
                   </View>
                 )}
               </View>
             </View>
           </Modal>
 
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              paddingHorizontal: 15,
-              paddingVertical: 20,
-              alignItems: "center",
-            }}
-          >
-            <Entypo
-              style={{ paddingRight: 10 }}
-              name="location"
-              size={23}
-              color="black"
-            />
-            <Text style={styles.txt}>9 West 46th Street,New York city</Text>
-          </TouchableOpacity>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                paddingHorizontal: 15,
+                paddingVertical: 10,
+                alignItems: "center",
+              }}
+            >
+              <Entypo
+                style={{ paddingRight: 10 }}
+                name="location"
+                size={23}
+                color="black"
+              />
+              <Text style={styles.txt}>111 Trâu Quỳ,Gia Lâm,Hà Nội</Text>
+            </TouchableOpacity>
 
-          <FlatList
-            data={FoodTypeData}
-            horizontal
-            pagingEnabled
-            scrollEnabled
-            snapToAlignment="center"
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item, index }) => {
-              return (
-                <View style={{ flexDirection: "column", alignItems: "center" }}>
-                  <TouchableOpacity
-                    style={[
-                      styles.btnType,
-                      {
-                        backgroundColor:
-                          selectedFoodType?.id === item.id
-                            ? R.colors.colorMain
-                            : R.colors.gray4,
-                      },
-                    ]}
-                    key={item.id}
-                    onPress={() => OnChangFoodType(item)}
+            <Banner />
+
+            <FlatList
+              data={FoodTypeData}
+              horizontal
+              pagingEnabled
+              scrollEnabled
+              snapToAlignment="center"
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item, index }) => {
+                return (
+                  <View
+                    style={{ flexDirection: "column", alignItems: "center" }}
                   >
-                    <Image
+                    <TouchableOpacity
                       style={[
-                        styles.img,
+                        styles.btnType,
                         {
-                          tintColor:
+                          backgroundColor:
                             selectedFoodType?.id === item.id
-                              ? R.colors.white
-                              : R.colors.black,
+                              ? R.colors.colorMain
+                              : R.colors.gray4,
                         },
                       ]}
-                      source={item.img}
-                    />
-                  </TouchableOpacity>
-                  <Text style={styles.txt}>{item.type}</Text>
-                </View>
-              );
-            }}
-          />
-          <Text style={styles.txtTitle}>{selectedFoodType?.type} Menu</Text>
-          <FoodMenu data={selectedFoodType?.menuFood} />
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Text style={styles.txtTitle}>Near me</Text>
-            <TouchableOpacity>
-              <Text
-                style={[
-                  styles.txtweight,
-                  { paddingHorizontal: 15, paddingVertical: 20 },
-                ]}
-              >
-                See all
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <FoodNearMe data={selectedFoodType?.menuNearMe} />
-          <ImageBackground
-            source={R.images.bgHambergerDiscount}
-            style={styles.bg}
-          />
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Text style={styles.txtTitle}>For breakfast</Text>
-            <TouchableOpacity>
-              <Text
-                style={[
-                  styles.txtweight,
-                  { paddingHorizontal: 15, paddingVertical: 20 },
-                ]}
-              >
-                See all
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <FoodBreakfast data={selectedFoodType?.menuBreakfast} />
+                      key={item.id}
+                      onPress={() => OnChangFoodType(item)}
+                    >
+                      <Image
+                        style={[
+                          styles.img,
+                          {
+                            tintColor:
+                              selectedFoodType?.id === item.id
+                                ? R.colors.white
+                                : R.colors.black,
+                          },
+                        ]}
+                        source={item.img}
+                      />
+                    </TouchableOpacity>
+                    <Text style={styles.txt}>{item.name}</Text>
+                  </View>
+                );
+              }}
+            />
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={styles.txtTitle}>Sản phẩm bán chạy</Text>
+            </View>
+            <FoodBreakfast data={ListProduct} />
+            <View
+              style={{
+                height: 50,
+              }}
+            />
+          </ScrollView>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -351,11 +390,11 @@ const styles = StyleSheet.create({
     color: R.colors.color777,
   },
   btnType: {
-    width: 80,
-    height: 80,
+    width: 76,
+    height: 76,
     marginBottom: 10,
     borderRadius: 20,
-    marginHorizontal: 15,
+    marginHorizontal: 10,
     backgroundColor: "#ccc",
     alignItems: "center",
     justifyContent: "center",
@@ -365,7 +404,7 @@ const styles = StyleSheet.create({
     height: 45,
   },
   txtTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "600",
     color: R.colors.black,
     paddingVertical: 20,
