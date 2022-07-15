@@ -58,7 +58,41 @@ const SignUpView = (props) => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
                 textColor={R.colors.black}
-                placeholder={"Nhập tên đăng nhập"}
+                placeholder={"Nhập SĐT"}
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                error={errors.username}
+                containerStyle={{
+                  width: 320,
+                  borderWidth: 0.1,
+                  paddingLeft: 45,
+                  height: 50,
+                  borderRadius: 15,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 2,
+                  },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 3.84,
+                }}
+                isIcon={true}
+                iconName={"phone-portrait-outline"}
+              />
+            )}
+            name="phone"
+            defaultValue=""
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextForm
+                textColor={R.colors.black}
+                placeholder={"Nhập tài khoản"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}

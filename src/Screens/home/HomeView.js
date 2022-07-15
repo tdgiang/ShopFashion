@@ -30,19 +30,6 @@ import Banner from "./Banner";
 
 const ListProduct = [
   {
-    id: 10000021,
-    type: "Burgers",
-    img: "https://cdn.lep.vn//2022/05/images/products/1652781254962-A82A2575-800x800.jpeg",
-    name: "Váy Cổ V Ly",
-    price: 450000,
-    address: "13 Street 47 W 13th St ,NY",
-    time: 10,
-    km: 2,
-    rate: 3.6,
-    review: 1000,
-    open: "7:00 - 21:00",
-  },
-  {
     id: 10000022,
     type: "Burgers",
     img: "https://cdn.lep.vn//2022/06/images/products/1656399176652-MAXIJENN-3-800x800.jpeg",
@@ -55,6 +42,20 @@ const ListProduct = [
     review: 1000,
     open: "7:00 - 21:00",
   },
+  {
+    id: 10000021,
+    type: "Burgers",
+    img: "https://cdn.lep.vn//2022/05/images/products/1652781254962-A82A2575-800x800.jpeg",
+    name: "Váy Cổ V Ly",
+    price: 450000,
+    address: "13 Street 47 W 13th St ,NY",
+    time: 10,
+    km: 2,
+    rate: 3.6,
+    review: 1000,
+    open: "7:00 - 21:00",
+  },
+
   {
     id: 10000023,
     type: "Burgers",
