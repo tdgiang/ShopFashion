@@ -128,6 +128,7 @@ const HomeView = (props) => {
     onChangeSearch,
     selectedFoodType,
     OnChangFoodType,
+    userInfo,
   } = props;
   const menuFood = FoodTypeData[1].menuFood;
   const [modalSeacrh, setModalSearch] = useState(false);
@@ -155,7 +156,7 @@ const HomeView = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <View style={{ flex: 1, backgroundColor: R.colors.white }}>
-        {/* <ModalEnableLocation /> */}
+        <ModalEnableLocation />
         <View>
           <Button
             title={"Search"}
@@ -305,7 +306,7 @@ const HomeView = (props) => {
                 size={23}
                 color="black"
               />
-              <Text style={styles.txt}>111 Trâu Quỳ,Gia Lâm,Hà Nội</Text>
+              <Text style={styles.txt}>{props.userInfo.address}</Text>
             </TouchableOpacity>
 
             <Banner />

@@ -4,6 +4,7 @@ import HomeView from "./HomeView";
 import { useNavigation } from "@react-navigation/native";
 import { LIST_PRODUCT } from "../../routers/ScreenNames";
 import { FoodTypeData } from "./DataFake";
+import { connect } from "react-redux";
 
 const Home = (props) => {
   const navigate = useNavigation();
@@ -22,8 +23,15 @@ const Home = (props) => {
       onChangeSearch={onChangeSearch}
       selectedFoodType={selectedFoodType}
       OnChangFoodType={OnChangFoodType}
+      userInfo={props.userInfo}
     />
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    userInfo: state.userReducer,
+  };
+};
+
+export default connect(mapStateToProps, {})(Home);
