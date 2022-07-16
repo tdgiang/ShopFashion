@@ -16925,7 +16925,7 @@
 			buildConfigurationList = E04BC30694496FB2310DCE0637068345 /* Build configuration list for PBXNativeTarget "FBReactNativeSpec" */;
 			buildPhases = (
 				0A6C3735A43FC05D523509FB801B9D69 /* Headers */,
-				B2859EC35511B8398CB19AE5D36E51AE /* [CP-User] Generate Specs */,
+				3758FED89476C60A40BC2C818948F5BF /* [CP-User] Generate Specs */,
 				269D9A228E87459E5980D884A9C5FAEB /* Sources */,
 				AC013DEC88472AC24C7F5E1674371CCD /* Frameworks */,
 			);
@@ -17525,23 +17525,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B2859EC35511B8398CB19AE5D36E51AE /* [CP-User] Generate Specs */ = {
+		3758FED89476C60A40BC2C818948F5BF /* [CP-User] Generate Specs */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"/Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/../Libraries",
+				"/Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/../Libraries",
 			);
 			name = "[CP-User] Generate Specs";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/codegen-FBReactNativeSpec.log",
-				"/Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec/FBReactNativeSpec.h",
-				"/Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec/FBReactNativeSpec-generated.mm",
+				"/Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec/FBReactNativeSpec.h",
+				"/Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec/FBReactNativeSpec-generated.mm",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -o pipefail\n\nbash -l -c 'SRCS_DIR=/Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/../Libraries CODEGEN_MODULES_OUTPUT_DIR=/Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec CODEGEN_MODULES_LIBRARY_NAME=FBReactNativeSpec /Users/macbookpro/Desktop/ShopApp/Food_APP_NMD/node_modules/react-native/scripts/generate-specs.sh' 2>&1 | tee \"${SCRIPT_OUTPUT_FILE_0}\"";
+			shellScript = "set -o pipefail\n\nbash -l -c 'SRCS_DIR=/Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/../Libraries CODEGEN_MODULES_OUTPUT_DIR=/Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/../React/FBReactNativeSpec/FBReactNativeSpec CODEGEN_MODULES_LIBRARY_NAME=FBReactNativeSpec /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native/scripts/generate-specs.sh' 2>&1 | tee \"${SCRIPT_OUTPUT_FILE_0}\"";
 		};
 		DAD2C0B688E728882793AD0677504ECC /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
