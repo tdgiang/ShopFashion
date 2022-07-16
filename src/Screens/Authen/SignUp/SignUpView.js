@@ -154,6 +154,39 @@ const SignUpView = (props) => {
             name="userName"
             defaultValue=""
           />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextForm
+                placeholder={"Nhập địa chỉ"}
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                error={errors.address}
+                containerStyle={{
+                  width: 320,
+                  borderWidth: 0.1,
+                  paddingLeft: 45,
+                  height: 50,
+                  borderRadius: 15,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 2,
+                  },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 3.84,
+                }}
+                isIcon={true}
+                iconName={"lock-closed-outline"}
+              />
+            )}
+            name="address"
+            defaultValue=""
+          />
 
           <Controller
             control={control}
@@ -190,40 +223,7 @@ const SignUpView = (props) => {
             name="passWord"
             defaultValue=""
           />
-          <Controller
-            control={control}
-            rules={{
-              required: true,
-            }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextForm
-                placeholder={"Nhập lại mật khẩu"}
-                onBlur={onBlur}
-                onChangeText={onChange}
-                value={value}
-                isPassword={true}
-                error={errors.repassword}
-                containerStyle={{
-                  width: 320,
-                  borderWidth: 0.1,
-                  paddingLeft: 45,
-                  height: 50,
-                  borderRadius: 15,
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 0,
-                    height: 2,
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 3.84,
-                }}
-                isIcon={true}
-                iconName={"lock-closed-outline"}
-              />
-            )}
-            name="repassword"
-            defaultValue=""
-          />
+
           <View
             style={{
               marginTop: 30,

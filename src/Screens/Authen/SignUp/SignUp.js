@@ -10,28 +10,21 @@ import { connect } from "react-redux";
 const SignUp = (props) => {
   const navigate = useNavigation();
   const onSubmit = async (data) => {
-    if (data.passWord != data.repassword) {
-      showAlert(TYPE.WARN, "Thông báo!", "Mật khẩu không trùng nhau!");
+    props.showLoading();
+    const response = await SignUpApi({
+      ...data,
+    });
+    props.hideLoading();
+    if (response.data.kq == 1 && response.data.user) {
+      showAlert(TYPE.SUCCESS, "Thông báo!", "Đăng ký thành công!");
+      navigate.navigate(SIGNINSCREEN);
     } else {
-      props.showLoading();
-      const response = await SignUpApi({
-        ...data,
-        address: "Trâu Quỳ,Gia Lâm,Hà Nội",
-      });
-      props.hideLoading();
-      if (response.data.kq == 1 && response.data.user) {
-        showAlert(TYPE.SUCCESS, "Thông báo!", "Đăng ký thành công!");
-        navigate.navigate(SIGNINSCREEN);
-      } else {
-        showAlert(
-          TYPE.ERROR,
-          "Thông báo!",
-          "Tài khoản và mật khẩu không chính xác!"
-        );
-      }
+      showAlert(
+        TYPE.ERROR,
+        "Thông báo!",
+        "Tài khoản và mật khẩu không chính xác!"
+      );
     }
-
-    console.log(data);
   };
   return <SignUpView onSubmit={onSubmit} />;
 };
