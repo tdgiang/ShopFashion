@@ -1,6 +1,7 @@
-export const root = 'https://www.mecallapi.com/api/';
+export const root = "http://192.168.0.101:3000/";
 export default {
-  urllogin: root + 'login',
-  urlUserInfo:"https://6273f3ca3d2b510074254a36.mockapi.io/userInfo",
-  urlEditCard:"https://6273f3ca3d2b510074254a36.mockapi.io/userInfo/1"
+  urllogin: `${root}apiusers/login`,
+  urlSigup: `${root}apiusers`,
+  urlCreateBill: `${root}apibills`,
+  urlDoneBill: `${root}apibills/done`,
 };

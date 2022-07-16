@@ -348,36 +348,35 @@ const RestaurantDetailsView = (props) => {
             ))}
             <View style={{ height: 30 }} />
           </View>
-
-          {props.product.cart?.length > 0 && (
-            <TouchableOpacity
-              style={styles.popup}
-              onPress={() => navigate.navigate(MY_CART_SCREEN)}
-            >
-              <SimpleLineIcons
-                style={{ top: 8 }}
-                name="handbag"
-                size={24}
-                color={R.colors.white}
-              />
-              <View
-                style={{
-                  backgroundColor: R.colors.white,
-                  alignSelf: "center",
-                  borderRadius: 20,
-                  width: 18,
-                  height: 18,
-                  top: -5,
-                  right: -10,
-                }}
-              >
-                <Text style={styles.txtCountPopup}>
-                  {props.product.cart.length}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          )}
         </ScrollView>
+        {props.product.cart?.length > 0 && (
+          <TouchableOpacity
+            style={styles.popup}
+            onPress={() => navigate.navigate(MY_CART_SCREEN)}
+          >
+            <SimpleLineIcons
+              style={{ top: 8 }}
+              name="handbag"
+              size={24}
+              color={R.colors.white}
+            />
+            <View
+              style={{
+                backgroundColor: R.colors.white,
+                alignSelf: "center",
+                borderRadius: 20,
+                width: 18,
+                height: 18,
+                top: -5,
+                right: -10,
+              }}
+            >
+              <Text style={styles.txtCountPopup}>
+                {props.product.cart.length}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        )}
       </View>
     </>
   );

@@ -6,25 +6,31 @@ import { showLoading, hideLoading } from "../../../actions/loadingAction";
 import { saveUserToRedux } from "../../../actions/users";
 import { connect } from "react-redux";
 import { showAlert, TYPE } from "../../../components/DropdownAlert";
+import { loginApi } from "../../../apis/Functions/users";
 
 const SignIn = (props) => {
   const navigate = useNavigation();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("data", data);
 
     props.showLoading();
-    setTimeout(() => {
-      props.hideLoading();
-      if (data.username == "thuongtran" && data.password == "12345678") {
-        navigate.navigate(TABNAVIGATOR);
-      } else {
-        showAlert(
-          TYPE.ERROR,
-          "Thông báo!",
-          "Tài khoản và mật khẩu không chính xác!"
-        );
-      }
-    }, 2000);
+
+    const response = await loginApi({
+      userName: data.username,
+      passWord: data.password,
+    });
+    props.hideLoading();
+
+    if (response.data.kq == 1 && response.data.user) {
+      navigate.navigate(TABNAVIGATOR);
+      props.saveUserToRedux(response.data.user);
+    } else {
+      showAlert(
+        TYPE.ERROR,
+        "Thông báo!",
+        "Tài khoản và mật khẩu không chính xác!"
+      );
+    }
   };
   return <SignInView onSubmit={onSubmit} />;
 };

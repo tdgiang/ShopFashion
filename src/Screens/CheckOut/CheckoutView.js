@@ -26,23 +26,49 @@ import { ORDER_SCREEN, TABNAVIGATOR } from "../../routers/ScreenNames";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { showAlert, TYPE } from "../../components/DropdownAlert";
-
+import { createBillApi } from "../../apis/Functions/users";
+import { showLoading, hideLoading } from "../../actions/loadingAction";
 const CheckoutView = (props) => {
-  const { product, total, payToOrder, resetCart } = props;
+  const { product, total, payToOrder, resetCart, userInfo } = props;
   const [selectedMethod, setSelectedMethod] = useState(false);
   function TotalPrice(price, tonggia) {
     return Number(price * tonggia).toLocaleString("en-US");
   }
   const navigate = useNavigation();
-  const onPay = () => {
-    payToOrder(product.cart);
-    showAlert(TYPE.SUCCESS, "Thông báo!", "Đặt hàng thành công!");
-    navigate.navigate(TABNAVIGATOR);
+  const onPay = async () => {
+    const arrFoods = product.cart.map((e) => {
+      return { name: e.name, price: e.price, count: e.count };
+    });
+    const contact = {
+      name: userInfo.name,
+      phone: userInfo.phone,
+      address: userInfo.address,
+    };
+
+    props.showLoading();
+    const response = await createBillApi({
+      user: userInfo._id,
+      contact,
+      arrFoods,
+      total: parseInt(total.split(",").join("")),
+      cardPayMethod: selectedMethod == "creditCard" ? true : false,
+    });
+    props.hideLoading();
+    console.log(response.data);
+    if (response.data.kq == 1) {
+      showAlert(TYPE.SUCCESS, "Thông báo!", "Đặt hàng thành công!");
+      navigate.navigate(TABNAVIGATOR);
+      console.log("product.cart", product.cart);
+      payToOrder(product.cart);
+      AsyncStorage.setItem("IDBILL", response.data.data._id);
+    } else {
+      showAlert(TYPE.ERROR, "Thông báo!", "Đặt hàng thất bại!");
+    }
   };
   const onSelectedMethod = (value) => {
     setSelectedMethod(value);
   };
-  console.log(selectedMethod);
+
   return (
     <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <Header
@@ -213,7 +239,7 @@ const CheckoutView = (props) => {
               >
                 <Text style={styles.txtweight}>Tổng tiền</Text>
                 <Text style={[styles.txtTotal, { fontSize: 25 }]}>
-                  ${total}
+                  {total} đ
                 </Text>
               </View>
 
@@ -337,6 +363,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
   return {
     product: state.MyCartReaducer,
+    userInfo: state.userReducer,
   };
 };
 
@@ -346,4 +373,6 @@ export default connect(mapStateToProps, {
   decreaseItem,
   payToOrder,
   resetCart,
+  showLoading,
+  hideLoading,
 })(CheckoutView);

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import AccountView from "./AccountView";
-
+import { connect } from "react-redux";
 const Account = (props) => {
-  const dataProfile = {
-    name: "Thưởng Trần",
-    phone: "08827127221",
-    email: "jack@gmail.mail",
-    address: "111 Trâu Quỳ,Gia Lâm,Hà Nội",
-  };
-  return <AccountView dataProfile={dataProfile} />;
+  console.log("userInfo", props.userInfo);
+
+  return <AccountView dataProfile={props.userInfo} />;
 };
 
-export default Account;
+const mapStateToProps = (state) => {
+  return {
+    userInfo: state.userReducer,
+  };
+};
+
+export default connect(mapStateToProps, {})(Account);

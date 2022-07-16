@@ -107,42 +107,7 @@ const MyProfileView = (props) => {
             defaultValue={data.data.phone}
           />
         </View>
-        <View style={styles.row}>
-          <Text style={styles.txtGray}>Email</Text>
-          <Controller
-            control={control}
-            rules={{
-              required: true,
-            }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextForm
-                textAlign={"right"}
-                textColor={R.colors.black}
-                onBlur={onBlur}
-                onChangeText={onChange}
-                value={value}
-                error={errors.email}
-                containerStyle={{
-                  paddingVertical: 0,
-                  paddingHorizontal: 10,
-                  backgroundColor: R.colors.gray5,
-                  width: 250,
-                  borderWidth: 0.1,
-                  borderRadius: 5,
-                  shadowColor: "#000",
-                  shadowOffset: {
-                    width: 0,
-                    height: 2,
-                  },
-                  shadowOpacity: 0.25,
-                  shadowRadius: 3.84,
-                }}
-              />
-            )}
-            name="email"
-            defaultValue={data.data.email}
-          />
-        </View>
+
         <View style={styles.row}>
           <Text style={styles.txtGray}>Địa chỉ</Text>
           <Controller

@@ -9,6 +9,7 @@ import {
   Animated,
   FlatList,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import R from "../../../assets/R";
 import {
@@ -58,11 +59,46 @@ const SignUpView = (props) => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
                 textColor={R.colors.black}
+                placeholder={"Nhập họ và tên"}
+                onBlur={onBlur}
+                onChangeText={onChange}
+                value={value}
+                error={errors.name}
+                containerStyle={{
+                  width: 320,
+                  borderWidth: 0.1,
+                  paddingLeft: 45,
+                  height: 50,
+                  borderRadius: 15,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 2,
+                  },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 3.84,
+                }}
+                isIcon={true}
+                iconName={"ios-person-outline"}
+              />
+            )}
+            name="name"
+            defaultValue=""
+          />
+
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextForm
+                textColor={R.colors.black}
                 placeholder={"Nhập SĐT"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
-                error={errors.username}
+                error={errors.phone}
                 containerStyle={{
                   width: 320,
                   borderWidth: 0.1,
@@ -96,7 +132,7 @@ const SignUpView = (props) => {
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
-                error={errors.username}
+                error={errors.userName}
                 containerStyle={{
                   width: 320,
                   borderWidth: 0.1,
@@ -115,7 +151,7 @@ const SignUpView = (props) => {
                 iconName={"ios-person-outline"}
               />
             )}
-            name="username"
+            name="userName"
             defaultValue=""
           />
 
@@ -132,7 +168,7 @@ const SignUpView = (props) => {
                 onChangeText={onChange}
                 value={value}
                 isPassword={true}
-                error={errors.password}
+                error={errors.passWord}
                 containerStyle={{
                   width: 320,
                   borderWidth: 0.1,
@@ -151,7 +187,7 @@ const SignUpView = (props) => {
                 iconName={"lock-closed-outline"}
               />
             )}
-            name="password"
+            name="passWord"
             defaultValue=""
           />
           <Controller
@@ -293,7 +329,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: R.colors.black,
     fontWeight: "500",
-    marginBottom: 30,
+    marginBottom: 10,
+    marginTop: 10,
     left: -110,
   },
 });

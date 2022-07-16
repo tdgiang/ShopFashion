@@ -16,10 +16,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { RESTAURANTDETAILSCREEN } from "../../routers/ScreenNames";
 import { showAlert, TYPE } from "../../components/DropdownAlert";
-
+import AsyncStorage from "@react-native-community/async-storage";
+import { doneBillApi } from "../../apis/Functions/users";
+import { showLoading, hideLoading } from "../../actions/loadingAction";
 const OrderView = (props) => {
   const navigate = useNavigation();
   const { productPaid, TotalPrice, total } = props;
+  console.log("productPaid", productPaid);
   return (
     <>
       {productPaid.oderList.length == 0 ? (
@@ -266,13 +269,21 @@ const OrderView = (props) => {
                     </View>
                   </View>
                   <Button
-                    onPress={() => {
+                    onPress={async () => {
+                      const idBill = await AsyncStorage.getItem("IDBILL");
+                      console.log(idBill);
+                      const response = await doneBillApi({
+                        id: idBill,
+                      });
+                      props.hideLoading();
+                      console.log(response.data);
                       showAlert(
                         TYPE.SUCCESS,
                         "Thông báo!",
                         "Cảm ơn quý khách đã đặt hàng tại Lep Shop"
                       );
                       props.clearOrder();
+                      AsyncStorage.clear();
                     }}
                     title={"Đã nhận được hàng"}
                     backgroundColor={R.colors.colorMain}
@@ -328,4 +339,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OrderView;
+const mapStateToProps = (state) => {
+  return {
+    productPaid: state.MyCartReaducer,
+  };
+};
+
+export default connect(mapStateToProps, {
+  showLoading,
+  hideLoading,
+})(OrderView);
