@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 
 import ListProductView from "./view";
 
@@ -55,8 +55,30 @@ const ListProductData = [
 
 const ListProduct = (props) => {
   const { name, products } = props.route.params.data;
+  const [listData, setListData] = useState([]);
 
-  return <ListProductView name={name} data={products} />;
+  useEffect(() => {
+    const temps = products.map((e) => {
+      return {
+        id: e._id,
+        type: "Burgers",
+        img: e.images[0],
+        name: e.name,
+        price: e.price,
+        description: e.description,
+        address: "13 Street 47 W 13th St ,NY",
+        time: 10,
+        km: 2,
+        rate: 3.9,
+        review: 1000,
+        open: "7:00 - 21:00",
+      };
+    });
+
+    setListData(temps);
+  }, [products]);
+
+  return <ListProductView name={name} data={listData} />;
 };
 
 export default ListProduct;

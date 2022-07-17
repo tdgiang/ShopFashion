@@ -25,51 +25,55 @@ const ListProductView = (props) => {
       }}
     >
       <Header isBack={true} title={`Sản phẩm ${name}`} />
-      <FlatList
-        numColumns={2}
-        contentContainerStyle={{
+      <View
+        style={{
           flex: 1,
+          paddingTop: 10,
         }}
-        style={{ flex: 1, marginTop: 10 }}
-        data={data}
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => {
-          return (
-            <View
-              style={{
-                flexDirection: "column",
-                alignItems: "center",
-                marginBottom: 10,
-              }}
-            >
-              <TouchableOpacity
-                style={styles.btnFoodBreakfast}
-                key={item.id}
-                onPress={() =>
-                  navigate.navigate(RESTAURANTDETAILSCREEN, { item })
-                }
-              >
-                <Image
-                  style={styles.imgFoodBreakFast}
-                  source={{ uri: item.img }}
-                />
-              </TouchableOpacity>
-              <Text numberOfLines={1} style={styles.txt}>
-                {item.name}
-              </Text>
-              <Text
+      >
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
+          data={data}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item, index }) => {
+            return (
+              <View
                 style={{
-                  color: R.colors.main,
-                  fontWeight: "600",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  marginBottom: 10,
                 }}
               >
-                {toPriceVnd(item.price)} đ
-              </Text>
-            </View>
-          );
-        }}
-      />
+                <TouchableOpacity
+                  style={styles.btnFoodBreakfast}
+                  key={item.id}
+                  onPress={() =>
+                    navigate.navigate(RESTAURANTDETAILSCREEN, { item })
+                  }
+                >
+                  <Image
+                    style={styles.imgFoodBreakFast}
+                    source={{ uri: item.img }}
+                  />
+                </TouchableOpacity>
+                <Text numberOfLines={1} style={styles.txt}>
+                  {item.name}
+                </Text>
+                <Text
+                  style={{
+                    color: R.colors.main,
+                    fontWeight: "600",
+                  }}
+                >
+                  {toPriceVnd(item.price)} đ
+                </Text>
+              </View>
+            );
+          }}
+        />
+      </View>
     </View>
   );
 };

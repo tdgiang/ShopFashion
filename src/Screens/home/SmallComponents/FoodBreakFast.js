@@ -24,7 +24,6 @@ const FoodBreakfast = (props) => {
   return (
     <FlatList
       scrollEnabled={false}
-      contentContainerStyle={{ alignSelf: "flex-start", marginBottom: 100 }}
       numColumns={2}
       data={data}
       pagingEnabled

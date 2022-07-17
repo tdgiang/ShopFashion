@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
   Modal,
+  RefreshControl,
 } from "react-native";
 import ModalEnableLocation from "./SmallComponents/ModalEnableLocationComponent";
 import R from "../../assets/R";
@@ -129,6 +130,10 @@ const HomeView = (props) => {
     selectedFoodType,
     OnChangFoodType,
     userInfo,
+    refreshing,
+    onRefresh,
+    listPopular,
+    collections,
   } = props;
   const menuFood = FoodTypeData[1].menuFood;
   const [modalSeacrh, setModalSearch] = useState(false);
@@ -141,23 +146,12 @@ const HomeView = (props) => {
     };
     fetchData();
   }, []);
-  const serachFilter = (text) => {
-    let matches = [];
-    if (text.length > 0) {
-      matches = masterData.filter((i) => {
-        const regax = new RegExp(`${text}`, "gi");
-        return i.type.match(regax);
-      });
-    }
 
-    setfilterData(matches);
-    setSearch(text);
-  };
   return (
     <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <View style={{ flex: 1, backgroundColor: R.colors.white }}>
         <ModalEnableLocation />
-        <View>
+        <View style={{ flex: 1 }}>
           <Button
             title={"Search"}
             backgroundColor={R.colors.gray5}
@@ -291,7 +285,16 @@ const HomeView = (props) => {
             </View>
           </Modal>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            onRrefreshControl={
+              <RefreshControl refreshing={true} onRefresh={onRefresh} />
+            }
+            showsVerticalScrollIndicator={false}
+            scrollEventThrottle={16}
+            style={{
+              flex: 1,
+            }}
+          >
             <TouchableOpacity
               style={{
                 flexDirection: "row",
@@ -312,7 +315,7 @@ const HomeView = (props) => {
             <Banner />
 
             <FlatList
-              data={FoodTypeData}
+              data={collections}
               horizontal
               pagingEnabled
               scrollEnabled
@@ -347,7 +350,7 @@ const HomeView = (props) => {
                                 : R.colors.black,
                           },
                         ]}
-                        source={item.img}
+                        source={{ uri: item.img }}
                       />
                     </TouchableOpacity>
                     <Text style={styles.txt}>{item.name}</Text>
@@ -362,9 +365,9 @@ const HomeView = (props) => {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.txtTitle}>Sản phẩm bán chạy</Text>
+              <Text style={styles.txtTitle}>Sản phẩm nổi bật</Text>
             </View>
-            <FoodBreakfast data={ListProduct} />
+            <FoodBreakfast data={listPopular} />
             <View
               style={{
                 height: 50,

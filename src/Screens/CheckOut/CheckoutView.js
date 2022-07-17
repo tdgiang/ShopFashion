@@ -82,7 +82,7 @@ const CheckoutView = (props) => {
           fontWeight: "500",
         }}
       />
-      <ScrollView contentContainerStyle={{ flex: 1 }}>
+      <ScrollView>
         <View style={{ flex: 0.5, paddingHorizontal: 15, paddingVertical: 20 }}>
           <Text style={styles.txtGray}>Ship to</Text>
           <TouchableOpacity
