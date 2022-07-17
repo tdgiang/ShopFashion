@@ -140,6 +140,16 @@ const HomeView = (props) => {
   const [search, setSearch] = useState("");
   const [filterData, setfilterData] = useState([]);
   const [masterData, setmasterData] = useState([]);
+
+  // const [refreshing, setRefreshing] = React.useState(false);
+
+  // const onRefresh = React.useCallback(() => {
+  //   setRefreshing(true);
+  //   setTimeout(() => {
+  //     setRefreshing(false);
+  //   }, 100);
+  // }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       setmasterData(menuFood);
@@ -150,7 +160,7 @@ const HomeView = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <View style={{ flex: 1, backgroundColor: R.colors.white }}>
-        <ModalEnableLocation />
+        {/* <ModalEnableLocation /> */}
         <View style={{ flex: 1 }}>
           <Button
             title={"Search"}
@@ -286,8 +296,8 @@ const HomeView = (props) => {
           </Modal>
 
           <ScrollView
-            onRrefreshControl={
-              <RefreshControl refreshing={true} onRefresh={onRefresh} />
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
             }
             showsVerticalScrollIndicator={false}
             scrollEventThrottle={16}

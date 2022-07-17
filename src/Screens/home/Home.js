@@ -16,7 +16,7 @@ const Home = (props) => {
 
   const [listPopular, setListPopular] = useState([]);
   const [collections, setCollections] = useState([]);
-  const [refreshing, setRefreshing] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getListPopular();
@@ -24,9 +24,9 @@ const Home = (props) => {
   }, []);
 
   const getListPopular = async () => {
-    props.showLoading();
+    setRefreshing(true);
     const response = await listPopularApi();
-    props.hideLoading();
+    setRefreshing(false);
     if (response.data) {
       const temps = response.data.map((e) => {
         return {
@@ -52,9 +52,8 @@ const Home = (props) => {
   };
 
   const getListCollection = async () => {
-    props.showLoading();
     const response = await listCollectionApi();
-    props.hideLoading();
+
     if (response.data) {
       const temp = response.data.map((e) => {
         return {
@@ -77,8 +76,6 @@ const Home = (props) => {
   };
 
   const onRefresh = () => {
-    console.log("Chay vao re");
-    // setRefreshing(true);
     getListPopular();
     getListCollection();
   };
