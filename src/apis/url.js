@@ -4,4 +4,7 @@ export default {
   urlSigup: `${root}apiusers`,
   urlCreateBill: `${root}apibills`,
   urlDoneBill: `${root}apibills/done`,
+
+  listCollection: `${root}apicollections/foods`,
+  listPopular: `${root}apifoods/popular`,
 };

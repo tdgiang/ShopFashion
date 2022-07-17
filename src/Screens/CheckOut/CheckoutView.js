@@ -246,7 +246,7 @@ const CheckoutView = (props) => {
               <Button
                 onPress={() => onPay()}
                 disabled={selectedMethod ? false : true}
-                title={"Pay"}
+                title={"Thanh toán"}
                 backgroundColor={
                   selectedMethod ? R.colors.colorMain : R.colors.gray5
                 }

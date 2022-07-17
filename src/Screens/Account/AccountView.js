@@ -18,8 +18,10 @@ import {
   CHANGE_PASS_SCREEN,
   MY_PROFILE_SCREEN,
   PAYMENT_SETTING_SCREEN,
+  SIGNINSCREEN,
 } from "../../routers/ScreenNames";
 import { userInfoApi } from "../../apis/Functions/users";
+import { confirmAlert } from "../../components/Aleart";
 
 const AccountView = (props) => {
   const navigation = useNavigation();
@@ -84,7 +86,14 @@ const AccountView = (props) => {
           <Text style={styles.txtGray}>Liên hệ</Text>
           <AntDesign name="right" size={20} color={R.colors.gray5b71} />
         </TouchableOpacity>
-        <TouchableOpacity style={{ alignItems: "center", paddingVertical: 20 }}>
+        <TouchableOpacity
+          onPress={() => {
+            confirmAlert("Bạn có chắc chắn muốn đăng xuất", () => {
+              navigation.navigate(SIGNINSCREEN);
+            });
+          }}
+          style={{ alignItems: "center", paddingVertical: 20 }}
+        >
           <Text style={[styles.txtTitle, { color: "red" }]}>Đăng xuất</Text>
         </TouchableOpacity>
       </View>

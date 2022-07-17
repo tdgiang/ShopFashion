@@ -1,0 +1,336 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dcvcard"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.75.1] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/3f1c7afbafe498777bc68f7541730dd3/jetified-flipper-0.75.1/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.75.1] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/3f1c7afbafe498777bc68f7541730dd3/jetified-flipper-0.75.1/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-68
+14-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-65
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-79
+15-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-76
+16
+17    <queries>
+17-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-14:15
+18        <intent>
+18-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-13:18
+19            <action android:name="android.media.action.IMAGE_CAPTURE" />
+19-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-73
+19-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:21-70
+20        </intent>
+21    </queries>
+22
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+23-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-81
+23-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:22-78
+24    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+24-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:25:5-82
+24-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:25:22-79
+25
+26    <application
+26-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:6:5-24:19
+27        android:name="com.dcvcard.MainApplication"
+27-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:7:7-38
+28        android:allowBackup="false"
+28-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:11:7-34
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/866fb96332467ef93186c6daf448477c/core-1.5.0/AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:icon="@mipmap/ic_launcher"
+31-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:9:7-41
+32        android:label="@string/app_name"
+32-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:8:7-39
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:10:7-52
+34        android:theme="@style/AppTheme"
+34-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:12:7-38
+35        android:usesCleartextTraffic="true" >
+35-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/debug/AndroidManifest.xml:8:9-44
+36        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+36-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/debug/AndroidManifest.xml:11:9-86
+36-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/debug/AndroidManifest.xml:11:19-83
+37        <activity
+37-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:13:7-23:18
+38            android:name="com.dcvcard.MainActivity"
+38-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:14:9-37
+39            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+39-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:16:9-86
+40            android:label="@string/app_name"
+40-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:15:9-41
+41            android:launchMode="singleTask"
+41-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:17:9-40
+42            android:windowSoftInputMode="adjustResize" >
+42-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:18:9-51
+43            <intent-filter>
+43-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:19:9-22:25
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:20:13-65
+44-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:20:21-62
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:21:13-73
+46-->/Users/macbookpro/Desktop/Project/ShopFashion/android/app/src/main/AndroidManifest.xml:21:23-70
+47            </intent-filter>
+48        </activity>
+49
+50        <service android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService" />
+50-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-111
+50-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:18-108
+51        <service
+51-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-23:19
+52            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+52-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-95
+53            android:exported="false" >
+53-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-37
+54            <intent-filter>
+54-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-22:29
+55                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+55-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:17-78
+55-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:25-75
+56            </intent-filter>
+57        </service>
+58
+59        <receiver
+59-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:9-32:20
+60            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+60-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-96
+61            android:exported="true"
+61-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:13-36
+62            android:permission="com.google.android.c2dm.permission.SEND" >
+62-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-73
+63            <intent-filter>
+63-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-31:29
+64                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+64-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:17-81
+64-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:25-78
+65            </intent-filter>
+66        </receiver>
+67
+68        <meta-data
+68-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:34:9-36:36
+69            android:name="firebase_messaging_auto_init_enabled"
+69-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:35:13-64
+70            android:value="true" />
+70-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:13-33
+71        <meta-data
+71-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:9-39:32
+72            android:name="com.google.firebase.messaging.default_notification_channel_id"
+72-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-89
+73            android:value="" />
+73-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-29
+74        <meta-data
+74-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:9-42:47
+75            android:name="com.google.firebase.messaging.default_notification_color"
+75-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-84
+76            android:resource="@color/white" />
+76-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:13-44
+77        <meta-data
+77-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-14:36
+78            android:name="app_data_collection_default_enabled"
+78-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-63
+79            android:value="true" />
+79-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-33
+80
+81        <service
+81-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-20:19
+82            android:name="com.google.firebase.components.ComponentDiscoveryService"
+82-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:18-89
+83            android:directBootAware="true"
+83-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+84            android:exported="false" >
+84-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:51:13-37
+85            <meta-data
+85-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:85
+86                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+86-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-120
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:52:13-54:85
+89                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+89-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:53:17-119
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:54:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/b4db281e489596ccd4f0079cf2089576/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:28:13-30:85
+92                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+92-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/b4db281e489596ccd4f0079cf2089576/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:29:17-115
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-datatransport:18.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/b4db281e489596ccd4f0079cf2089576/jetified-firebase-datatransport-18.0.0/AndroidManifest.xml:30:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-installations:17.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/89d78912e2f40315e4aee53d458bbdab/jetified-firebase-installations-17.0.0/AndroidManifest.xml:18:13-20:85
+95                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+95-->[com.google.firebase:firebase-installations:17.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/89d78912e2f40315e4aee53d458bbdab/jetified-firebase-installations-17.0.0/AndroidManifest.xml:19:17-127
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-installations:17.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/89d78912e2f40315e4aee53d458bbdab/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
+97        </service>
+98
+99        <provider
+99-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:9-26:38
+100            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+100-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-88
+101            android:authorities="com.dcvcard.reactnativefirebaseappinitprovider"
+101-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-86
+102            android:exported="false"
+102-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-37
+103            android:initOrder="99" />
+103-->[:react-native-firebase_app] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/app/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-35
+104        <provider
+104-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-27:20
+105            android:name="androidx.core.content.FileProvider"
+105-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-62
+106            android:authorities="com.dcvcard.provider"
+106-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-60
+107            android:exported="false"
+107-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-37
+108            android:grantUriPermissions="true" >
+108-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-47
+109            <meta-data
+109-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:58
+110                android:name="android.support.FILE_PROVIDER_PATHS"
+110-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+111                android:resource="@xml/provider_paths" />
+111-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-55
+112        </provider>
+113
+114        <activity
+114-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:9-31:72
+115            android:name="com.yalantis.ucrop.UCropActivity"
+115-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-60
+116            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+116-->[:react-native-image-crop-picker] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:13-69
+117
+118        <receiver
+118-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:28:9-35:20
+119            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+119-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:29:13-78
+120            android:exported="true"
+120-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:30:13-36
+121            android:permission="com.google.android.c2dm.permission.SEND" >
+121-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:31:13-73
+122            <intent-filter>
+122-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-31:29
+123                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+123-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:17-81
+123-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:25-78
+124            </intent-filter>
+125        </receiver>
+126        <!--
+127             FirebaseMessagingService performs security checks at runtime,
+128             but set to not exported to explicitly avoid allowing another app to call it.
+129        -->
+130        <service
+130-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:41:9-48:19
+131            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+131-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:42:13-82
+132            android:directBootAware="true"
+132-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:43:13-43
+133            android:exported="false" >
+133-->[com.google.firebase:firebase-messaging:22.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/368ee4ca2a48cb6203b8bbd105267467/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:44:13-37
+134            <intent-filter android:priority="-500" >
+134-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-22:29
+135                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+135-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:17-78
+135-->[:react-native-firebase_messaging] /Users/macbookpro/Desktop/Project/ShopFashion/node_modules/@react-native-firebase/messaging/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:25-75
+136            </intent-filter>
+137        </service>
+138        <service
+138-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:29:9-35:19
+139            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+139-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:30:13-103
+140            android:exported="false" >
+140-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:31:13-37
+141            <meta-data
+141-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:32:13-34:39
+142                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+142-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:33:17-94
+143                android:value="cct" />
+143-->[com.google.android.datatransport:transport-backend-cct:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/00dea77b6989a9c9e2ac3e4dbf765101/jetified-transport-backend-cct-3.0.0/AndroidManifest.xml:34:17-36
+144        </service>
+145        <service
+145-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:26:9-30:19
+146            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+146-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:27:13-117
+147            android:exported="false"
+147-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:28:13-37
+148            android:permission="android.permission.BIND_JOB_SERVICE" >
+148-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:29:13-69
+149        </service>
+150
+151        <receiver
+151-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:32:9-34:40
+152            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+152-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:33:13-132
+153            android:exported="false" />
+153-->[com.google.android.datatransport:transport-runtime:3.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/24aa9ac62d91c625d34b45ce18de5d03/jetified-transport-runtime-3.0.0/AndroidManifest.xml:34:13-37
+154
+155        <activity
+155-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:23:9-27:75
+156            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+156-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:24:13-93
+157            android:excludeFromRecents="true"
+157-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:25:13-46
+158            android:exported="false"
+158-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:26:13-37
+159            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+159-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:27:13-72
+160        <!--
+161            Service handling Google Sign-In user revocation. For apps that do not integrate with
+162            Google Sign-In, this service will never be started.
+163        -->
+164        <service
+164-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:33:9-37:51
+165            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+165-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:34:13-89
+166            android:exported="true"
+166-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:35:13-36
+167            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+167-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:36:13-107
+168            android:visibleToInstantApps="true" />
+168-->[com.google.android.gms:play-services-auth:19.2.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/d8db2336fad5b31d5d637b1664071ccf/jetified-play-services-auth-19.2.0/AndroidManifest.xml:37:13-48
+169
+170        <activity
+170-->[com.google.android.gms:play-services-base:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/ffc6a5d1acf5b28bf344598cbf884c4f/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
+171            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+171-->[com.google.android.gms:play-services-base:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/ffc6a5d1acf5b28bf344598cbf884c4f/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
+172            android:exported="false"
+172-->[com.google.android.gms:play-services-base:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/ffc6a5d1acf5b28bf344598cbf884c4f/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
+173            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+173-->[com.google.android.gms:play-services-base:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/ffc6a5d1acf5b28bf344598cbf884c4f/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
+174
+175        <provider
+175-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+176            android:name="com.google.firebase.provider.FirebaseInitProvider"
+176-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+177            android:authorities="com.dcvcard.firebaseinitprovider"
+177-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+178            android:directBootAware="true"
+178-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+179            android:exported="false"
+179-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+180            android:initOrder="100" />
+180-->[com.google.firebase:firebase-common:20.0.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/436ecdfe2dfd3bbd074ce682913788cf/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+181
+182        <meta-data
+182-->[com.google.android.gms:play-services-basement:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/4da1ddb354c252b1b216ec3bc40fa4ee/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
+183            android:name="com.google.android.gms.version"
+183-->[com.google.android.gms:play-services-basement:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/4da1ddb354c252b1b216ec3bc40fa4ee/jetified-play-services-basement-17.5.0/AndroidManifest.xml:24:13-58
+184            android:value="@integer/google_play_services_version" />
+184-->[com.google.android.gms:play-services-basement:17.5.0] /Users/macbookpro/.gradle/caches/transforms-2/files-2.1/4da1ddb354c252b1b216ec3bc40fa4ee/jetified-play-services-basement-17.5.0/AndroidManifest.xml:25:13-66
+185    </application>
+186
+187</manifest>

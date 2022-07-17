@@ -20,7 +20,7 @@ const MyProfileView = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: R.colors.white }}>
       <Header
-        title="My Profile"
+        title="Tài khoản"
         isBack={true}
         styleTitle={{
           fontSize: 22,

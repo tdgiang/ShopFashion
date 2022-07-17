@@ -59,7 +59,7 @@ const SignUpView = (props) => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
                 textColor={R.colors.black}
-                placeholder={"Nhập họ và tên"}
+                placeholder={"Nhập họ và tên *"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
@@ -94,7 +94,7 @@ const SignUpView = (props) => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
                 textColor={R.colors.black}
-                placeholder={"Nhập SĐT"}
+                placeholder={"Nhập SĐT *"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
@@ -128,7 +128,7 @@ const SignUpView = (props) => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
                 textColor={R.colors.black}
-                placeholder={"Nhập tài khoản"}
+                placeholder={"Nhập tài khoản *"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
@@ -161,7 +161,7 @@ const SignUpView = (props) => {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <TextForm
-                placeholder={"Nhập địa chỉ"}
+                placeholder={"Nhập địa chỉ *"}
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}

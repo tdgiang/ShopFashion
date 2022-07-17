@@ -35,3 +35,12 @@ export const doneBillApi = async (body) =>
   PostLogin(url.urlDoneBill, body)
     .then((res) => res)
     .catch((err) => err);
+
+export const listCollectionApi = async (body) =>
+  GetData(url.listCollection, body)
+    .then((res) => res)
+    .catch((err) => err);
+export const listPopularApi = async (body) =>
+  GetData(url.listPopular, body)
+    .then((res) => res)
+    .catch((err) => err);
