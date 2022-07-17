@@ -273,7 +273,7 @@ const RestaurantDetailsView = (props) => {
                 fontSize: 16,
               }}
             >
-              {`Thiết kế váy của Lep' dành cho những cô gái muốn đẹp muốn tươi,muốn yêu đời rực rỡ. Thanh lịch những vẫn quyến rũ! \n- Chất liệu: gântrơn \n- Chiều dài áo: 115cm \n- Dáng áo: trench coat \n- Size váy:\nSize S: Vòng 1 dưới 83, Vòng 2 dưới 64. \nSize M: Vòng 1 82-86, Vòng 264-68. \nSize L: Vòng 1 86-90, Vòng 2 68-74.`}
+              {dataRestaurant.description}
             </Text>
             <Text
               style={{
