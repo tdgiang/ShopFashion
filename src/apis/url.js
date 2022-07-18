@@ -1,4 +1,5 @@
-export const root = "http://192.168.0.101:3000/";
+export const root = "http://localhost:3000/";
+
 export default {
   urllogin: `${root}apiusers/login`,
   urlSigup: `${root}apiusers`,

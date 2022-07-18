@@ -45,7 +45,7 @@ const Home = (props) => {
         };
       });
 
-      setListPopular(temps);
+      setListPopular(temps.reverse());
     } else {
       showAlert(TYPE.ERROR, "Thông báo!", "Lấy dữ liệu thất bại!");
     }
